@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Zverse</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById("dark-mode-toggle");
+            toggle.addEventListener("click", () => {
+                document.body.classList.toggle("dark-mode");
+                localStorage.setItem("dark-mode", document.body.classList.contains("dark-mode"));
+            });
+
+            if (localStorage.getItem("dark-mode") === "true") {
+                document.body.classList.add("dark-mode");
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login to Zverse</h2>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <a href="index.html"><button onclick="login()">Login</button></a>
+        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        <img id="dark-mode-toggle" src="images/dark-mode-icon.png" alt="Toggle Dark Mode" class="dark-mode-icon">
+    </div>
+</body>
+</html>

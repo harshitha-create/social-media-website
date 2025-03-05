@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.dark-mode {
+    background-color: #181818;
+    color: white;
+}
+
+header {
+    background: #0b111a;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button {
+    background: #1877f2;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100px;
+    margin: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #145dbf;
+    transform: scale(1.05);
+}
+
+.post {
+    background: white;
+    padding: 15px;
+    margin: 10px auto;
+    width: 60%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.post:hover {
+    transform: scale(1.02);
+}
+
+.dark-mode .post {
+    background: #242424;
+    box-shadow: none;
+}
+
+.login-container, .signup-container, .create-profile-container, .create-post-container {
+    max-width: 300px;
+    margin: 50px auto;
+    background: white;
+    padding: 40px 50px; /* Adjusted padding */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container input, .signup-container input, .create-profile-container input, .create-profile-container textarea, .create-post-container input, .create-post-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.dark-mode-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.feature-box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature {
+    flex: 1 1 30%;
+    margin: 10px;
+    text-align: center;
+}
+
+.feature img {
+    width: 20%; /* Adjusted width */
+    height: auto;
+    border-radius: 8px;
+}
+
+.connect, .share {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.connect img, .share img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.profile-header img {
+    width: 150px; /* Reduced width */
+    height: 150px; /* Reduced height */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}

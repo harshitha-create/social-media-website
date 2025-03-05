@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Zverse</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/profile.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const profile = JSON.parse(localStorage.getItem("profile"));
+            if (!profile) {
+                window.location.href = "create-profile.html";
+            } else {
+                document.getElementById("profile-name").innerText = `${profile.firstName} ${profile.lastName}`;
+                document.getElementById("profile-email").innerText = profile.email;
+                document.getElementById("profile-username").innerText = profile.username;
+                document.getElementById("profile-bio").innerText = profile.bio;
+                document.getElementById("profile-pic").src = profile.image;
+                loadUserPosts(profile.username);
+            }
+
+            const toggle = document.getElementById("dark-mode-toggle");
+            toggle.addEventListener("click", () => {
+                document.body.classList.toggle("dark-mode");
+                localStorage.setItem("dark-mode", document.body.classList.contains("dark-mode"));
+            });
+
+            if (localStorage.getItem("dark-mode") === "true") {
+                document.body.classList.add("dark-mode");
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Profile</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <button onclick="logout()">Logout</button>
+            <img id="dark-mode-toggle" src="images/dark-mode-icon.png" alt="Toggle Dark Mode" class="dark-mode-icon">
+        </nav>
+    </header>
+    <main>
+        <section class="profile-header">
+            <img id="profile-pic" src="images/default-profile.jpg" alt="Profile Picture">
+            <div class="profile-info">
+                <h2 id="profile-name">Username</h2>
+                <p id="profile-email">Email</p>
+                <p id="profile-username">Username</p>
+                <p id="profile-bio">Bio</p>
+            </div>
+        </section>
+        <section class="profile-posts">
+            <h2>Posts</h2>
+            <div id="user-posts" class="posts-grid"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Zverse. All rights reserved.</p>
+    </footer>
+</body>
+</html>

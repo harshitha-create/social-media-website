@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Zverse - Home</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <script defer src="js/auth.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const profile = localStorage.getItem("profile");
+                if (!profile) {
+                    window.location.href = "create-profile.html";
+                }
+
+                const toggle = document.getElementById("dark-mode-toggle");
+                toggle.addEventListener("click", () => {
+                    document.body.classList.toggle("dark-mode");
+                    localStorage.setItem("dark-mode", document.body.classList.contains("dark-mode"));
+                });
+
+                if (localStorage.getItem("dark-mode") === "true") {
+                    document.body.classList.add("dark-mode");
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1 class="logo">Zverse</h1>
+            <nav>
+                <a href="profile.html">Profile</a>
+                <button onclick="logout()">Logout</button>
+            </nav>
+        </header>
+        <main>
+            <section class="features">
+                <h2>Features</h2>
+                <div class="feature-box">
+                    <div class="feature">
+                        <img src="images/connect.jpg" alt="Connect" class="feature-image">
+                        <h3>Connect</h3>
+                        <p>Connect with friends and family, and meet new people with similar interests.</p>
+                    </div>
+                    <div class="feature">
+                        <img src="images/share.jpg" alt="Share" class="feature-image">
+                        <h3>Share</h3>
+                        <p>Share your thoughts, photos, and videos with your network.</p>
+                    </div>
+                    <div class="feature">
+                        <img src="images/discover.jpg" alt="Discover" class="feature-image">
+                        <h3>Discover</h3>
+                        <p><a href="feed.html">Discover new content and stay updated with the latest trends.</a></p>
+                    </div>
+                </div>
+            </section>
+            <section class="create-post">
+                <h2><a href="create-post.html">Create a New Post</a></h2>
+            </section>
+            <section class="view-feed">
+                <h2><a href="feed.html">View Feed</a></h2>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2025 Zverse. All rights reserved.</p>
+        </footer>
+    </body>
+</html>
