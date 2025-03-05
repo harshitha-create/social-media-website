@@ -40,6 +40,5 @@ If more time was available, the following enhancements could be made:
 9. **Friend Requests**: Implement a friend request system to connect with other users.
 10. **Direct Messaging**: Add a direct messaging feature for private conversations between users.
 
-## Getting Started
 
 
